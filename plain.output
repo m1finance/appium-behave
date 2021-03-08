@@ -1,0 +1,27 @@
+Feature: POC Login
+
+  Scenario: Log into the iOS app and view invest account
+    Given I am logged in ... failed in 10.183s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/behave/model.py", line 1329, in run
+    match.run(runner.context)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/behave/matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/steps.py", line 12, in first_step
+    logInButton = context.driver.find_element_by_ios_class_chain(logInButtonChain)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/appium/webdriver/extensions/search_context/ios.py", line 103, in find_element_by_ios_class_chain
+    return self.find_element(by=MobileBy.IOS_CLASS_CHAIN, value=class_chain_string)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/appium/webdriver/webdriver.py", line 279, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/appium/webdriver/errorhandler.py", line 31, in check_response
+    raise wde
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/appium/webdriver/errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+
