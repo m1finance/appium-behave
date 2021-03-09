@@ -17,14 +17,15 @@ def before_feature(context, feature):
             command_executor='http://127.0.0.1:4723/wd/hub',
             desired_capabilities={
                 'app' : app,
+                'appPackage': 'com.m1finance.android.dev',
+                'appActivity': 'com.m1finance.android.auth.AuthActivity',
                 'platformName' : 'Android',
+                'automationName': 'espresso',
                 'platformVersion' : '11.0',
                 'deviceName' : 'Pixel_4_API_30',
-                "allowTestPackages": True
-                # 'udid' : '01a135891395669f',
-                # 'appActivity' : '.HomeActivity',
-                # 'appPackage' : 'com.imdb.mobile'
-            }
+                'allowTestPackages': True,
+                'espressoBuildConfig': '{ "additionalAppDependencies": [ "com.google.android.material:material:1.0.0", "androidx.lifecycle:lifecycle-extensions:2.1.0" ] }'
+                }
         )
     elif 'ios' in feature.tags:
         app = os.path.join(os.path.dirname(__file__),
