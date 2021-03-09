@@ -25,6 +25,7 @@ def second_step(context):
 @then('I can see my invest details')
 def third_step(context):
     time.sleep(10)
-
+    assert 0 == 0
+    # assert 1 == 0, "This is an error message"
 
 

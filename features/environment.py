@@ -39,7 +39,7 @@ def before_feature(context, feature):
                 "platformVersion": "14.4",
                 "deviceName": "iPhone 11",
                 "fullReset": True,
-                "noReset": False,
+                
                 "app": app
             })
         print(context.driver.session)
