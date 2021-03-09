@@ -10,26 +10,27 @@ def before_all(context):
 def before_feature(context, feature):
     if 'android' in feature.tags:
         app = os.path.join(os.path.dirname(__file__),
-                           '../apps/Imdb/android',
-                           'com.imdb.mobile.apk')
+                           '../apps',
+                           'app-develop-debug.apk')
         app = os.path.abspath(app)
         context.driver = webdriver.Remote(
             command_executor='http://127.0.0.1:4723/wd/hub',
             desired_capabilities={
                 'app' : app,
                 'platformName' : 'Android',
-                'platformVersion' : '4.4',
-                'deviceName' : None,
-                'udid' : '01a135891395669f',
-                'appActivity' : '.HomeActivity',
-                'appPackage' : 'com.imdb.mobile'
+                'platformVersion' : '11.0',
+                'deviceName' : 'Pixel_4_API_30',
+                "allowTestPackages": True
+                # 'udid' : '01a135891395669f',
+                # 'appActivity' : '.HomeActivity',
+                # 'appPackage' : 'com.imdb.mobile'
             }
         )
     elif 'ios' in feature.tags:
-        # app = os.path.join(os.path.dirname(__file__),
-        #                    '../apps/TestApp/build/Release-iphonesimulator',
-        #                    'TestApp.app')
-        # app = os.path.abspath(app)
+        app = os.path.join(os.path.dirname(__file__),
+                           '../apps/',
+                           'client.app')
+        app = os.path.abspath(app)
         context.driver = webdriver.Remote(
             command_executor='http://127.0.0.1:4723/wd/hub',
             desired_capabilities={
@@ -37,9 +38,9 @@ def before_feature(context, feature):
                 "automationName": "XCUITest",
                 "platformVersion": "14.4",
                 "deviceName": "iPhone 11",
-                # "fullReset": True,
+                "fullReset": True,
                 "noReset": False,
-                "app": "/Users/peterneraasen/Library/Developer/Xcode/DerivedData/client-ebdlavmahtwgstaizrisljngbyuq/Build/Products/Local-iphonesimulator/client.app"
+                "app": app
             })
         print(context.driver.session)
         print(context.driver.contexts)

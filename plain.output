@@ -1,7 +1,7 @@
 Feature: POC Login
 
   Scenario: Log into the iOS app and view invest account
-    Given I am logged in ... failed in 10.183s
+    Given I am logged in ... failed in 10.058s
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/behave/model.py", line 1329, in run
     match.run(runner.context)
@@ -21,7 +21,7 @@ Traceback (most recent call last):
     super().check_response(response)
   File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+selenium.common.exceptions.InvalidSelectorException: Message: Locator Strategy '-ios class chain' is not supported for this session
 
 
 
