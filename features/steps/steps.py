@@ -17,7 +17,7 @@ def first_step(context):
         context.driver.find_elements_by_class_name('androidx.appcompat.widget.AppCompatEditText')[0].clear()
         context.driver.find_elements_by_class_name('androidx.appcompat.widget.AppCompatEditText')[0].send_keys('test1234')
 
-        context.driver.find_elements_by_class_name('androidx.appcompat.widget.AppCompatTextView')[0].click()
+        time.sleep(1)
     
     elif context.driver.capabilities['platformName'] == 'iOS':
         logInButtonChain = '**/XCUIElementTypeButton[`label == "Log In"`]'

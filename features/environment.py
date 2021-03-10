@@ -44,9 +44,8 @@ def before_feature(context, feature):
                 "app": app
             })
         print(context.driver.session)
-        print(context.driver.contexts)
 
 def after_feature(context, feature):
     sleep(1)
-    context.driver.save_screenshot("features/reports/screen_final.png")
+    # context.driver.save_screenshot("features/reports/screen_final.png")
     context.driver.quit()
