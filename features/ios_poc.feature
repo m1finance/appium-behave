@@ -1,4 +1,4 @@
-@android
+@android @ios
 Feature: POC Login
 
     Scenario: Log into the iOS app and view invest account
